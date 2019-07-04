@@ -1,0 +1,15 @@
+.container, .footer {
+  margin: 0 10%;
+}
+
+.m-item {
+  display: inline-block;
+  img {
+    max-width: 142px;
+  }
+}
+
+.sub-content > div > p {
+  font-size: 24px;
+  font-weight: bold;
+}
