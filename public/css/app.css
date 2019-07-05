@@ -11102,7 +11102,7 @@ a.text-dark:focus {
 
 .container,
 .footer {
-  margin: 0 10%;
+  margin: 10px 10%;
 }
 
 .m-item {
@@ -11116,5 +11116,17 @@ a.text-dark:focus {
 .sub-content > div > p {
   font-size: 24px;
   font-weight: bold;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: center;
+}
+
+.btn-login {
+  margin: 0 10px;
 }
 

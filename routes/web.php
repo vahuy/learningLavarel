@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Pages Controller
+Route::get('/', 'PagesController@getHome');
+Route::get('top100', 'PagesController@getTop100');
+Route::get('mv', 'PagesController@getMV');
 
 Route::get('/form', function () { return view('form');});
 
-Route::get('#', function () { return view('home');});
-
-Route::get('/top100', function () { return view('top100');});
-
-Route::get('/mv', function () { return view('mv');});
+// User Controller
+Route::get('/login','UserController@getLogin');
+Route::post('/login/submit', 'UserController@login');
+Route::post('/login/signUp', 'UserController@signUp');
