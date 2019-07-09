@@ -17,4 +17,8 @@ class PagesController extends Controller
     public function getMV() {
       return view('mv');
     }
+
+    public function getAddSong() {
+      return view('newsong');
+    }
 }
