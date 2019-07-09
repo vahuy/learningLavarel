@@ -14,12 +14,13 @@ class CreateSongsTable extends Migration
     public function up()
     {
         Schema::create('songs', function (Blueprint $table) {
-          $table->string('id');
+          $table->string('id')->primary();
           $table->string('name');
           $table->string('artist');
           $table->string('writer');
-          $table->string('type');//mv or audio
-          $table->mediumText('lyric');
+          $table->string('genres');//mv or audio
+          $table->mediumText('lyric')->nullable(true);
+          $table->string('cover_image')->nullable(true);
           $table->timestamps();
         });
     }

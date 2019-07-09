@@ -15,8 +15,12 @@
 Route::get('/', 'PagesController@getHome');
 Route::get('top100', 'PagesController@getTop100');
 Route::get('mv', 'PagesController@getMV');
-
 Route::get('/form', function () { return view('form');});
+Route::get('/newsong', 'PagesController@getAddSong');
+Route::get('/phpInfo', 'PagesController@getPhpInfo');
+
+// Song Controller
+Route::post('/song/submit', 'SongController@submitSong');
 
 // User Controller
 Route::get('/login','UserController@getLogin');

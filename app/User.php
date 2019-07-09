@@ -18,21 +18,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-  public function up()
-  {
-    Schema::create('user_account', function (Blueprint $table) {
-      $table->string('id');
-      $table->string('username');
-      $table->string('email');
-      $table->string('password');
-      $table->timestamps();
-    });
-  }
-
-  public function down()
-  {
-    Schema::dropIfExists('user_account');
-  }
     /**
      * The attributes that are mass assignable.
      *

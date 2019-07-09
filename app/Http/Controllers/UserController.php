@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Validator;
 
 class UserController extends Controller
 {
+
   public function getLogin() {
     return view('login');
   }
@@ -29,11 +31,15 @@ class UserController extends Controller
     $user = new User;
     $user->id = uniqid();
     $user->username = $request->input('username');
-    $user->password = sha1($request->input('password'));
+    $user->password = base64_encode($request->input('password'));
     $user->email = $request->input('email');
 
-    $user->save();
+    try {
+      $result = $user->save();
+    } catch (\Illuminate\Database\QueryException $e) {
+      return $e->getMessage();
+    }
 
-    return redirect('/');
+    return strval($result);
   }
 }
